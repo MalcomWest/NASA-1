@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="nasa_logo_icon_170926.ico" type="image/x-icon">
+  <title>Weather App (India)</title>
+
+</head>
+<body>
+  <div class="weather-app">
+    <h2>🌤 Weather Forecast</h2>
+    <input type="text" id="locationInput" placeholder="Enter area (e.g. Adhartal)">
+    <div class="suggestions" id="suggestions"></div>
+
+    <h3 style="margin:15px 0 8px;font-size:1rem;">⚙️ Comfort Settings</h3>
+    <select id="tempComfort">
+      <option value="20-30">Comfortable Temp: 20-30°C</option>
+      <option value="18-28">Comfortable Temp: 18-28°C</option>
+      <option value="22-35">Comfortable Temp: 22-35°C</option>
+    </select>
+    <select id="humidityComfort">
+      <option value="30-60">Comfortable Humidity: 30-60%</option>
+      <option value="40-70">Comfortable Humidity: 40-70%</option>
+      <option value="20-50">Comfortable Humidity: 20-50%</option>
+    </select>
+
+    <button id="btnGet">Get Weather</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

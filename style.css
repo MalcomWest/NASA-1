@@ -1,0 +1,186 @@
+
+body {
+font-family: "Poppins", "Segoe UI", Roboto, sans-serif;
+background: linear-gradient(135deg, #0E2148, #483AA0, #7965C1, #E3D095);
+background-size: 400% 400%;
+animation: gradientShift 18s ease infinite;
+margin: 0;
+padding: 20px;   /* add breathing room */
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+box-sizing: border-box;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* ===== Custom Scrollbar for Weather App ===== */
+.weather-app {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-x: hidden;
+  color: #fff;
+
+  /* smooth scrolling */
+  scroll-behavior: smooth;
+}
+
+/* Chrome, Edge, Safari */
+.weather-app::-webkit-scrollbar {
+  width: 8px;
+}
+.weather-app::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.weather-app::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #06b6d4, #3b82f6);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.6);
+}
+.weather-app::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #3b82f6, #06b6d4);
+}
+
+/* Firefox */
+.weather-app {
+  scrollbar-width: thin;
+  scrollbar-color: #3b82f6 rgba(255, 255, 255, 0.1);
+}
+
+
+h2 {
+    margin: 0 0 20px;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    transition: all 0.3s;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus, select:focus {
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 0 2px #ff9966;
+}
+
+select option {
+    color: #333;
+}
+
+.suggestions {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border-radius: 12px;
+    width: 340px;
+    max-height: 180px;
+    overflow-y: auto;
+    margin-top: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 100;
+}
+
+.suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.suggestions div:hover {
+    background: #f1f5f9;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.result {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.card {
+    background: rgba(255,255,255,0.18);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.comfort {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.good { background: rgba(16, 185, 129, 0.3); }
+.bad { background: rgba(239, 68, 68, 0.3); }
+.uncomfortable { background: rgba(245, 158, 11, 0.3); }
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+ul li {
+    background: rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 6px;
+}
